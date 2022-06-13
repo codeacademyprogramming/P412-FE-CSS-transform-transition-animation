@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Transform */
+
+.transform {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  margin: 200px auto;
+  transform-origin: center;
+
+  /* transition-property: transform; */
+  /* transition-duration: 5s; */
+  /* transition-delay: 2s; */
+  /* transition-timing-function: linear; */
+  transition: all 300ms linear 0.2s;
+}
+
+.transform:hover {
+  background-color: teal;
+  transform: scale(3);
+  color: white;
+}
+
+/* Transition */
+
+.wrapper div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  color: white;
+  text-transform: uppercase;
+
+  transition-property: width;
+  transition-duration: 5s;
+}
+
+.wrapper div.linear {
+  transition-timing-function: linear;
+}
+
+.wrapper div.ease {
+  transition-timing-function: ease;
+}
+
+.wrapper div.ease-in {
+  transition-timing-function: ease-in;
+}
+
+.wrapper div.ease-in-out {
+  transition-timing-function: ease-in-out;
+}
+
+.wrapper div.ease-out {
+  transition-timing-function: ease-out;
+}
+
+.wrapper div:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.wrapper:hover div {
+  width: 600px;
+}
+
+/* Animation */
+.animatable {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+  position: relative;
+
+  top: 0;
+  left: 0;
+
+  animation-name: loop360;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  /* animation-delay: 2s; */
+  /* animation-timing-function: ease-out; */
+}
+
+@keyframes loop360 {
+  0% {
+    top: 0;
+    left: 0;
+  }
+
+  25% {
+    top: 0;
+    left: 200px;
+  }
+
+  50% {
+    top: 200px;
+    left: 200px;
+  }
+
+  75% {
+    left: 0;
+    top: 200px;
+  }
+
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+
+/* .stop-animation:hover + .animatable {
+  animation-play-state: paused;
+} */
+.wrapper-2 {
+  width: 400px;
+  height: 400px;
+}
+
+.wrapper-2:hover .animatable {
+  animation-play-state: paused;
+}
